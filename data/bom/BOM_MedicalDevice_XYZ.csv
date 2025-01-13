@@ -1,0 +1,5 @@
+Component ID,Component Name,Device Name,Version,Supplier Name,Notes
+CMP-1001,Control Unit,GlucoMonitor Pro 2000,v1.2,BioCore Tech,Main processing unit
+CMP-2002,Adhesive Strip,GlucoMonitor Pro 2000,v1.2,AdheSeal Inc,Disposable adhesive used
+CMP-3003,Sensor Array,GlucoMonitor Pro 2000,v1.2,SensArray LLC,Blood glucose sensor
+CMP-2002,Adhesive Strip,MediPatch GlucoSensor,v3.0,AdheSeal Inc,Adhesive for patches

@@ -1,0 +1,33 @@
+# API Dependencies
+fastapi
+uvicorn
+python-dotenv
+pydantic
+pydantic-settings
+
+# Document Processing
+llama-parse
+openai
+PyYAML
+
+# Graph Database
+neo4j
+
+# Data Processing
+pandas
+numpy
+
+# Testing
+pytest
+pytest-asyncio
+httpx
+pytest-cov
+
+# Utilities
+python-multipart
+loguru
+
+# Development
+black
+isort
+flake8

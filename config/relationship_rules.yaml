@@ -1,0 +1,81 @@
+# config/relationship_rules.yaml
+
+# Rules for extracting relationships from documents
+relationship_rules:
+  # Component to Device relationships
+  component_device:
+    - type: "USED_IN"
+      source_type: "component"
+      target_type: "device"
+      source_pattern: "CMP-\\d{4}"
+      target_pattern: "[A-Za-z]+\\s+[A-Za-z]+\\s+\\d{4}"
+      confidence: "high"
+
+  # Component to Process relationships
+  component_process:
+    - type: "VALIDATED_BY"
+      source_type: "component"
+      target_type: "process"
+      source_pattern: "CMP-\\d{4}"
+      target_pattern: "Assembly Line #\\d+"
+      confidence: "high"
+
+  # Component to Regulatory relationships
+  component_regulatory:
+    - type: "REGULATED_BY"
+      source_type: "component"
+      target_type: "regulatory"
+      source_pattern: "CMP-\\d{4}"
+      target_pattern: "\\d{4}-K\\d{4}"
+      confidence: "high"
+
+  # Process to Device relationships
+  process_device:
+    - type: "MANUFACTURES"
+      source_type: "process"
+      target_type: "device"
+      source_pattern: "Assembly Line #\\d+"
+      target_pattern: "[A-Za-z]+\\s+[A-Za-z]+\\s+\\d{4}"
+      confidence: "medium"
+
+  # Change to Component relationships
+  change_component:
+    - type: "AFFECTS"
+      source_type: "change"
+      target_type: "component"
+      source_pattern: "ECO-\\d{4}-\\d{3}"
+      target_pattern: "CMP-\\d{4}"
+      confidence: "high"
+
+# Context rules for relationship extraction
+context_rules:
+  proximity:
+    max_words: 100  # Maximum words between entities to consider relationship
+    boost_factor: 1.2  # Boost score for closer entities
+
+  section_weights:
+    "Change Details": 1.5
+    "Impact Analysis": 1.5
+    "Device Description": 1.2
+    "Overview": 1.0
+
+# Validation rules for relationships
+validation_rules:
+  required_evidence:
+    "USED_IN": ["bom", "process_validation"]
+    "VALIDATED_BY": ["process_validation"]
+    "REGULATED_BY": ["regulatory"]
+    "AFFECTS": ["eco"]
+
+  confidence_thresholds:
+    "high": 0.8
+    "medium": 0.6
+    "low": 0.4
+
+# Pattern definitions for common entities
+patterns:
+  component_id: "CMP-\\d{4}"
+  device_name: "[A-Za-z]+\\s+[A-Za-z]+\\s+\\d{4}"
+  process_id: "Assembly Line #\\d+"
+  regulatory_id: "\\d{4}-K\\d{4}"
+  eco_number: "ECO-\\d{4}-\\d{3}"

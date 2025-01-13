@@ -1,0 +1,69 @@
+# config/document_families.yaml
+document_families:
+  bom:
+    patterns: 
+      - "*_BOM*.csv"
+      - "*BillOfMaterials*.csv"
+    type: "structured"
+    parser_settings:
+      format: "csv"
+      key_fields: 
+        - "Component ID"
+        - "Component Name"
+        - "Device Name"
+    extract_settings:
+      relationships:
+        - type: "USED_IN"
+          source_field: "Component ID"
+          target_field: "Device Name"
+
+  eco:
+    patterns:
+      - "*_ECO*.docx"
+      - "*_ChangeOrder*.pdf"
+    type: "unstructured"
+    parser_settings:
+      format: "markdown"
+      sections:
+        - "Change Details"
+        - "Justification"
+        - "Impact Analysis"
+    extract_settings:
+      entities:
+        - name: "component"
+          pattern: "CMP-\\d{4}"
+        - name: "process"
+          pattern: "Assembly Line #\\d+"
+
+  process_validation:
+    patterns:
+      - "*_Process*.pdf"
+      - "*_Validation*.pdf"
+    type: "unstructured"
+    parser_settings:
+      format: "markdown"
+      sections:
+        - "Overview"
+        - "Key Metrics"
+        - "Validation Observations"
+    extract_settings:
+      metrics:
+        - name: "application_precision"
+          pattern: "precision: (\\d+)%"
+        - name: "bonding_strength"
+          pattern: "strength: (\\d+)/10"
+
+  regulatory:
+    patterns:
+      - "*_FDA*.pdf"
+      - "*_Submission*.pdf"
+    type: "unstructured"
+    parser_settings:
+      format: "markdown"
+      sections:
+        - "Device Description"
+        - "Regulatory Notes"
+    extract_settings:
+      entities:
+        - name: "submission_id"
+          pattern: "\\d{4}-K\\d{4}"

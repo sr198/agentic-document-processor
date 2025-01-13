@@ -1,0 +1,19 @@
+# Environment variables
+.env
+.env.local
+
+# Dependencies
+node_modules/
+venv/
+__pycache__/
+
+# Build outputs
+build/
+dist/
+
+# Database
+*.db
+*.sqlite
+
+# System files
+.DS_Store

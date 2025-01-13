@@ -1,0 +1,12 @@
+# docker/Dockerfile.neo4j
+FROM neo4j:5.17.0
+
+# Install Neo4j APOC and GDS plugins
+ENV NEO4J_PLUGINS='["apoc", "graph-data-science"]'
+
+# Copy any custom configuration if needed
+# COPY neo4j.conf /conf/neo4j.conf
+
+EXPOSE 7474 7687
+
+CMD ["neo4j"]
