@@ -1,0 +1,57 @@
+Processing Document:
+Document ID: a520bb8d-a8c9-4e3b-a9c3-f642da005387
+Reference ID: None
+==================================================
+Entities found:
+component: ['CMP-1001', 'CMP-2002', 'CMP-3003', 'CMP-2002']
+component_id: ['CMP-1001', 'CMP-2002', 'CMP-3003', 'CMP-2002']
+component_name: []
+device: ['GlucoMonitor Pro 2000', 'GlucoMonitor Pro 2000', 'GlucoMonitor Pro 2000', 'MediPatch GlucoSensor']
+process: []
+regulatory: []
+
+Relationships found:
+==================================================
+
+Processing Document:
+Document ID: 31c004b4-08ba-46b4-9be8-dd12d2656559
+Reference ID: None
+==================================================
+Entities found:
+component: ['CMP-2002']
+component_id: ['CMP-2002']
+component_name: ['Adhesive Strip']
+device: ['GlucoMonitor Pro 2000', 'MediPatch GlucoSensor']
+process: ['Assembly Line #2']
+regulatory: ['2023-K0123']
+
+Relationships found:
+REGULATORY(2023-K0123) -REGULATES-> COMPONENT(CMP-2002)
+==================================================
+
+Processing Document:
+Document ID: d18df06f-0150-447c-8388-bb85b58bbc21
+Reference ID: None
+==================================================
+Entities found:
+component: ['CMP-2002']
+component_id: ['CMP-2002']
+component_name: []
+device: []
+process: ['Assembly Line #2', 'Assembly Line #2']
+regulatory: []
+
+Relationships found:
+==================================================
+
+Processing Document:
+Document ID: 97c074df-ac56-4861-94e4-353184a10412
+Reference ID: None
+==================================================
+Entities found:
+component: ['CMP-2002', 'CMP-2002', 'CMP-2002']
+component_id: ['CMP-2002', 'CMP-2002', 'CMP-2002']
+component_name: ['Adhesive Strip']
+device: ['GlucoMonitor Pro 2000', 'GlucoMonitor Pro 2000']
+...
+regulatory: []

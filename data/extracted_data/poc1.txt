@@ -1,0 +1,97 @@
+Document 1 Content:
+|Component ID|Component Name|Device Name          |Version|Supplier Name|Notes                   |
+|------------|--------------|---------------------|-------|-------------|------------------------|
+|CMP-1001    |Control Unit  |GlucoMonitor Pro 2000|v1.2   |BioCore Tech |Main processing unit    |
+|CMP-2002    |Adhesive Strip|GlucoMonitor Pro 2000|v1.2   |AdheSeal Inc |Disposable adhesive used|
+|CMP-3003    |Sensor Array  |GlucoMonitor Pro 2000|v1.2   |SensArray LLC|Blood glucose sensor    |
+|CMP-2002    |Adhesive Strip|MediPatch GlucoSensor|v3.0   |AdheSeal Inc |Adhesive for patches    |
+--------------------------------------------------
+Metadata:
+{}
+Relationships:
+{}
+==================================================
+
+Document 2 Content:
+# Engineering Change Order #2025-0111
+
+Date: 2025-01-11
+
+Author: Dr. Elena Strauss, Senior Design Engineer
+
+# Change Details:
+
+- Component Affected: CMP-2002 (Adhesive Strip)
+- Change Description
+- Switching adhesive formula to improve durability and user comfort
+- Justification:
+- Customer complaints of allergic reactions
+- Manufacturing reports of adhesive failure at high humidity
+- Impact Analysis:
+- Devices Affected: GlucoMonitor Pro 2000, MediPatch GlucoSensor
+- Processes Affected: Assembly Line #2
+- Regulatory Filings Impacted: FDA 510(k) #2023-K0123
+- Effective Date: 2025-03-01
+--------------------------------------------------
+Metadata:
+{}
+Relationships:
+{}
+==================================================
+
+Document 3 Content:
+# Process Validation Report
+
+# Assembly Line #2 – Adhesive Application
+
+Date: 2024-12-15
+
+Prepared By: QA Team
+
+# Overview:
+
+Assembly Line #2 is responsible for applying adhesive strips (CMP-2002) to devices.
+
+# Key Metrics:
+
+- Application precision: 95% (Target: ≥ 98%)
+- Adhesive bonding strength: 8/10 (Target: ≥ 9/10)
+
+# Validation Observations:
+
+- Issue: Adhesive material inconsistencies noted
+- Impact: Reduced bonding strength during high-humidity production cycles
+- Recommendations:
+--------------------------------------------------
+Metadata:
+{}
+Relationships:
+{}
+==================================================
+
+Document 4 Content:
+# FDA 510(k) Submission
+
+# Device: GlucoMonitor Pro 2000
+
+# Date: 2023-09-10
+
+# Author: Regulatory Affairs Team
+
+# Device Description:
+
+- Name: GlucoMonitor Pro 2000
+- Components: Includes CMP-2002 (Adhesive Strip)
+- Classification: Class II medical device
+- Indications for Use: Continuous glucose monitoring for diabetic patients
+
+# Regulatory Notes:
+
+- Component-Specific Notes: Adhesive (CMP-2002) tested for biocompatibility and durability under FDA protocols
+- Conditions for Approval: Any changes to CMP-2002 must be reviewed under a new 510(k) submission or pre-approval amendment
+--------------------------------------------------
+...
+{}
+Relationships:
+{}
+==================================================

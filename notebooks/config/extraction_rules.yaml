@@ -1,0 +1,50 @@
+# config/extraction_rules.yaml
+entities:
+  component:
+    pattern: "CMP-\\d{4}"
+    attributes:
+      - name: "id"
+        pattern: "(CMP-\\d{4})"
+      - name: "name"
+        pattern: "CMP-\\d{4}\\s*\\(([^)]+)\\)"
+  
+  device:
+    pattern: "(GlucoMonitor\\sPro\\s2000|MediPatch\\sGlucoSensor)"
+    
+  process:
+    pattern: "Assembly\\sLine\\s#\\d+"
+    
+  regulatory:
+    pattern: "\\d{4}-K\\d{4}"
+
+relationships:
+  - type: "USED_IN"
+    source: "component"
+    target: "device"
+    contexts:
+      - source_distance: 50  # words
+        keywords: ["used in", "used by", "component of"]
+  
+  - type: "AFFECTS"
+    source: "component"
+    target: "process"
+    contexts:
+      - source_distance: 100
+        keywords: ["affects", "impacts", "used in"]
+        sections: ["Impact Analysis", "Change Details"]
+
+  - type: "VALIDATES"
+    source: "process"
+    target: "component"
+    contexts:
+      - source_distance: 50
+        keywords: ["validates", "validation", "applying"]
+        sections: ["Overview", "Key Metrics"]
+
+  - type: "REGULATES"
+    source: "regulatory"
+    target: "component"
+    contexts:
+      - source_distance: 100
+        keywords: ["submission", "approval", "regulatory"]
+        sections: ["Device Description", "Regulatory Notes"]
